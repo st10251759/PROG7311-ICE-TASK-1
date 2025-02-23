@@ -2,7 +2,91 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container text-center mt-5">
+    <div class="card shadow-lg p-5 bg-light border-0">
+        <h1 class="display-4 fw-bold text-primary">Welcome to The Task Management App</h1>
+        <p class="lead text-secondary">
+            Stay organized and manage your tasks efficiently.
+        </p>
+
+        <div class="my-4">
+            <a asp-controller="ToDoTasks" asp-action="Index" class="btn btn-lg btn-primary shadow-sm">
+                <i class="bi bi-list-check"></i> View Task List
+            </a>
+        </div>
+    </div>
 </div>
+
+<style>
+    /* General Styles */
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f4f8; /* Light blue-gray background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    }
+
+    .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    }
+
+    /* Card Styles */
+    .card {
+    background: linear-gradient(135deg, #ffffff, #f0f8ff); /* Light white to light blue gradient */
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Heading Styles */
+    .display-4 {
+    font-size: 3rem;
+    color: #1a73e8; /* Primary blue color */
+    margin-bottom: 20px;
+    font-weight: 700;
+    }
+
+    .lead {
+    font-size: 1.25rem;
+    color: #4a5568; /* Dark gray-blue for text */
+    margin-bottom: 30px;
+    }
+
+    /* Button Styles */
+    .btn-primary {
+    background-color: #1a73e8; /* Primary blue */
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-primary:hover {
+    background-color: #1557b0; /* Darker blue on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Icon Styles */
+    .bi-list-check {
+    margin-right: 8px;
+    font-size: 1.2rem;
+    }
+
+</style>
