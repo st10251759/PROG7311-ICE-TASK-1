@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using st10251759_prog7311_ice_task_1.Data;
+
 namespace st10251759_prog7311_ice_task_1
 {
     public class Program
@@ -8,6 +11,12 @@ namespace st10251759_prog7311_ice_task_1
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            // Configure Database
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));// Configure Database
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             var app = builder.Build();
 
