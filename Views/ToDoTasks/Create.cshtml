@@ -1,0 +1,64 @@
+﻿@model st10251759_prog7311_ice_task_1.Models.ToDoTask
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg p-5 bg-light border-0">
+        <h2 class="text-primary text-center fw-bold">Create a New Task</h2>
+        <p class="lead text-center text-secondary">
+            Add a new task to your task list.
+        </p>
+
+        <hr class="my-4 border-primary">
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Title" class="form-label fw-bold text-dark"></label>
+                        <input asp-for="Title" class="form-control border-primary shadow-sm" />
+                        <span asp-validation-for="Title" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label fw-bold text-dark"></label>
+                        <textarea asp-for="Description" class="form-control border-primary shadow-sm" rows="3"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="DueDate" class="form-label fw-bold text-dark"></label>
+                        <input asp-for="DueDate" type="date" class="form-control border-primary shadow-sm" />
+                        <span asp-validation-for="DueDate" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" asp-for="IsCompleted" />
+                        <label class="form-check-label fw-bold text-dark">
+                            @Html.DisplayNameFor(model => model.IsCompleted)
+                        </label>
+                    </div>
+
+                    <div class="d-flex justify-content-center gap-3">
+                        <button type="submit" class="btn btn-primary btn-lg shadow-sm">
+                            <i class="bi bi-plus-circle"></i> Create Task
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary btn-lg shadow-sm">
+                            <i class="bi bi-arrow-left"></i> Back to List
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
